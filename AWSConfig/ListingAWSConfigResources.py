@@ -25,7 +25,8 @@ for rscType in resourceType:
     print("Find {} resources".format(resourceCount))
     resourceTotalCount+=resourceCount
 
-    # IF there's only one resource,
+	# (Add except If resourceCount==0)
+    # IF there's only one resource, 
     if resourceCount==1:
         id=getJsonData['resourceIdentifiers'][0]['resourceId']
         # result=> id=subnet-db7610fa
