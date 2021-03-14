@@ -25,9 +25,11 @@ for rscType in resourceType:
     print("Find {} resources".format(resourceCount))
     resourceTotalCount+=resourceCount
 
-	# (Add except If resourceCount==0)
-    # IF there's only one resource, 
-    if resourceCount==1:
+    # IF there's not resource,
+    if resourceCount==0:
+        continue
+    # IF there's only one resource,
+    elif resourceCount==1:
         id=getJsonData['resourceIdentifiers'][0]['resourceId']
         # result=> id=subnet-db7610fa
         resourceIdList.append(id)
@@ -49,4 +51,3 @@ for rscType in resourceType:
 endTime=time.time()
 print("\n\nTotal resource count: {}".format(resourceTotalCount))
 print("Working time: {} sec".format(endTime-startTime))
-
